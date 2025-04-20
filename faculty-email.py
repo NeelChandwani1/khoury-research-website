@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, session
 import pandas as pd
 
 app = Flask(__name__)
@@ -27,4 +27,5 @@ def send_email():
     return "<script>alert('Please select at least one professor to email.'); window.history.back();</script>"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=9000)
+
